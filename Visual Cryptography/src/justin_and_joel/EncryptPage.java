@@ -188,9 +188,14 @@ public class EncryptPage extends JFrame {
 					
 					// Allow user to chose a save location and name
 					Main.save_path = ImageFunctions.GetPathName();
+                                        Main.save_path1= ImageFunctions.GetPathName();
 					
 					// Catch errors during path selection
 					if (Main.save_path == null) {
+						Save_Path_Name.setText("Error selecting save destination");
+						return;
+					}
+                                        if (Main.save_path1 == null) {
 						Save_Path_Name.setText("Error selecting save destination");
 						return;
 					}
@@ -201,7 +206,7 @@ public class EncryptPage extends JFrame {
 					System.out.println("Save key: " + Main.save_key_path);
 										
 					// Create a save file for cipher
-					Main.save_cipher_path = Main.save_path + "_cipher.png";
+					Main.save_cipher_path = Main.save_path1 + "_cipher.png";
 					Main.cipher_file = new File(Main.save_cipher_path);
 					System.out.println("Save cipher: " + Main.save_cipher_path);
 					
