@@ -21,7 +21,8 @@ public class Main {
 	
 	//For Encryption
 	static String path; // Currently opened image file path
-	static String save_path; // Desired save file path
+	static String save_path;
+        static String save_path1;// Desired save file path
 	static String save_key_path; // Save path for key
 	static String save_cipher_path; // Save path for cipher
 	static String save_key_magnified_path;  // Save path for magnified key
