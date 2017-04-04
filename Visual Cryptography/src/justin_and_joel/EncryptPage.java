@@ -172,7 +172,8 @@ public class EncryptPage extends JFrame {
 		contentPane.add(btnOriginal);
 		
 		// Button to choose save destination for output
-		btnModified = new JButton("Modified");
+               // btnModified = new JButton("Modified key");
+                btnModified = new JButton("Modified");
 		btnModified.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -185,7 +186,8 @@ public class EncryptPage extends JFrame {
 					
 					// Allow user to chose a save location and name
 					Main.save_path = ImageFunctions.GetPathName();
-					
+					Main.save_path1= ImageFunctions.GetPathName();
+
 					// Catch errors during path selection
 					if (Main.save_path == null) {
 						Save_Path_Name.setText("Error selecting save destination");
@@ -198,7 +200,7 @@ public class EncryptPage extends JFrame {
 					System.out.println("Save key: " + Main.save_key_path);
 										
 					// Create a save file for cipher
-					Main.save_cipher_path = Main.save_path + "_cipher.png";
+					Main.save_cipher_path = Main.save_path1 + "_cipher.png";
 					Main.cipher_file = new File(Main.save_cipher_path);
 					System.out.println("Save cipher: " + Main.save_cipher_path);
 					
@@ -257,7 +259,7 @@ public class EncryptPage extends JFrame {
 				
 				//File names and paths for the magnified images
 				Main.save_key_magnified_path = Main.save_path + "_key_magnified.png";
-				Main.save_cipher_magnified_path = Main.save_path + "_cipher_magnified.png";
+				Main.save_cipher_magnified_path = Main.save_path1 + "_cipher_magnified.png";
 				Main.key_magnified_file = new File(Main.save_key_magnified_path);
 				Main.cipher_magnified_file = new File(Main.save_cipher_magnified_path);
 				
