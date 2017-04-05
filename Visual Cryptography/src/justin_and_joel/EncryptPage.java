@@ -164,7 +164,7 @@ public class EncryptPage extends JFrame {
 					}
 		
 					//Update label to display selected path
-					Original_Path_Name.setText(Main.path);
+					//Original_Path_Name.setText(Main.path);
 				}
 			}
 		});
@@ -195,14 +195,14 @@ public class EncryptPage extends JFrame {
 					}
 					
 					// Create a save file for key
-					Main.save_key_path = Main.save_path + "_key.png";
-					Main.key_file = new File(Main.save_key_path);
-					System.out.println("Save key: " + Main.save_key_path);
+					//Main.save_key_path = Main.save_path + "_share1.png";
+					Main.key_file = new File(Main.save_path);
+					System.out.println("Save key: " + Main.save_path);
 										
 					// Create a save file for cipher
-					Main.save_cipher_path = Main.save_path1 + "_cipher.png";
-					Main.cipher_file = new File(Main.save_cipher_path);
-					System.out.println("Save cipher: " + Main.save_cipher_path);
+					//Main.save_cipher_path = Main.save_path1 + "_share2.png";
+					Main.cipher_file = new File(Main.save_path1);
+					System.out.println("Save cipher: " + Main.save_path1);
 					
 					//Update save label to display selected path
 					Save_Path_Name.setText(Main.save_path + ".png");
@@ -258,8 +258,8 @@ public class EncryptPage extends JFrame {
 				}
 				
 				//File names and paths for the magnified images
-				Main.save_key_magnified_path = Main.save_path + "_key_magnified.png";
-				Main.save_cipher_magnified_path = Main.save_path1 + "_cipher_magnified.png";
+				Main.save_key_magnified_path = Main.save_path + "_share_1.png";
+				Main.save_cipher_magnified_path = Main.save_path1 + "_share_2.png";
 				Main.key_magnified_file = new File(Main.save_key_magnified_path);
 				Main.cipher_magnified_file = new File(Main.save_cipher_magnified_path);
 				
@@ -310,13 +310,13 @@ public class EncryptPage extends JFrame {
 				// Save and display magnified key image file
 				BufferedImage magnified_key_image = ImageFunctions.Magnify(key_image);
 				ImageFunctions.Save(magnified_key_image, Main.key_magnified_file);
-				ImageFunctions.Display_Image(magnified_key_image, "Magnified key");
+				ImageFunctions.Display_Image(magnified_key_image, "Magnified share1");
 				
 				// Save and display magnified cipher image file
 				Main.cipher_image = ImageFunctions.Create_Cipher(black_white, key_image);
 				BufferedImage magnified_cipher_image = ImageFunctions.Magnify(Main.cipher_image);
 				ImageFunctions.Save(magnified_cipher_image, Main.cipher_magnified_file);
-				ImageFunctions.Display_Image(magnified_cipher_image, "Magnified Cipher");
+				ImageFunctions.Display_Image(magnified_cipher_image, "Magnified share2");
 				
 				// Save and display printer friendly images if button checked
 				if (chckbxIncludePrintFriendly.isSelected()) {
@@ -326,12 +326,12 @@ public class EncryptPage extends JFrame {
 					ImageFunctions.Display_Image(print_ready_test, "Print Ready");
 					
 					BufferedImage print_ready_key = ImageFunctions.make_print_friendly(magnified_key_image);
-					String print_ready_key_path = Main.save_path + "_key_print_ready.png";
+					String print_ready_key_path = Main.save_path + "_share1_print_ready.png";
 					File print_ready_key_file = new File(print_ready_key_path);
 					ImageFunctions.Save(print_ready_key, print_ready_key_file);
 					
 					BufferedImage print_ready_cipher = ImageFunctions.make_print_friendly(magnified_cipher_image);
-					String print_ready_cipher_path = Main.save_path + "_cipher_print_ready.png";
+					String print_ready_cipher_path = Main.save_path + "_share2_print_ready.png";
 					File print_ready_cipher_file = new File(print_ready_cipher_path);
 					ImageFunctions.Save(print_ready_cipher, print_ready_cipher_file);
 					}
