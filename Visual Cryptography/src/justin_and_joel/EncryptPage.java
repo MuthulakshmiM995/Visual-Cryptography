@@ -304,7 +304,7 @@ public class EncryptPage extends JFrame {
 				
 				
 				// Save and display key image file					
-				ImageFunctions.Display_Image(key_image, "Key");
+				//ImageFunctions.Display_Image(key_image, "Key");
 				ImageFunctions.Save(key_image, Main.key_file);
 				
 				// Save and display magnified key image file
